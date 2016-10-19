@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	passInfoの値がとれましたよ!
+	<br/>
+
+	Description				{{ .description }}			<br/>
+	FormatVersion  			{{ .formatversion }}<br/>
+	OrganizationName  		{{ .organizationname }}<br/>
+	PassTypeId  		{{ .passtypeid }}<br/>
+	SerialNumber  		{{ .serialnumber }}<br/>
+	TeamId  		{{ .teamid }}<br/>
+<br/>
+	// Associated App Keys<br/>
+	AppLaunchURL  		{{ .applaunchurl }}<br/>
+	AssociatedStoreId  		{{ .associatedstoreid }}<br/>
+<br/>
+	// Companion App Keys<br/>
+	Userinfo  		{{ .userinfo }}<br/>
+<br/>
+	// Expiration Keys<br/>
+	ExpirationDate  		{{ .expirationdate }}<br/>
+	Voided  		{{ .voided }}<br/>
+<br/>
+	// Relevance Keys<br/>
+	<ul>
+		{{ range .relevance }}
+		Beacons:<br/>
+		<li>{{ .Major }}</li>
+		<li>{{ .Minor }}</li>
+		<li>{{ .ProximityUUID }}</li>
+		<li>{{ .RelevantText }}</li>
+		{{ end }}
+	</ul>
+</html>
